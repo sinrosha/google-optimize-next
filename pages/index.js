@@ -1,9 +1,16 @@
+import React, {useEffect} from "react"
 import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
-import Script from 'next/script'
+import useOptimizeAB from "../helper/ab"// ... then in _app.js you can use the variant for whatever
 
 export default function Home() {
+
+  useEffect(() => {
+    window.dataLayer.push({ event: "optimize.activate" });
+    const variant = useOptimizeAB("your_experiment_id");
+    console.log(variant);
+  });
   return (
     <div className={styles.container}>
       <Head>

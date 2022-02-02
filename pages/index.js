@@ -13,16 +13,16 @@ export default function Home() {
       </Head>
 
       <>
-      <Script async src="https://www.googletagmanager.com/gtag/js?id=UA-97610955-2"></Script>
-        <Script>
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments)}
-          gtag('js', new Date());
+      <Script async id="gtm" src="https://www.googletagmanager.com/gtag/js?id=UA-97610955-2"></Script>
+      <Script id="custom">
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments)}
+        gtag('js', new Date());
 
-          gtag('config', 'UA-97610955-2');
-        </Script>
+        gtag('config', 'UA-97610955-2');
+      </Script>
 
-        <Script src="https://www.googleoptimize.com/optimize.js?id=OPT-TW4WMDM"></Script></>
+        <Script id="optimize" src="https://www.googleoptimize.com/optimize.js?id=OPT-TW4WMDM"></Script></>
 
       <main className={styles.main}>
         <h1 className={styles.title}>

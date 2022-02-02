@@ -12,7 +12,7 @@ export default function Home() {
     window.dataLayer.push({ event: "optimize.activate" });
     const variant = window.google_optimize.get("7Mytyh5iRJSBBaJS_m1mQQ");
     if(variant) {
-      console.log(`Showing ${+variant ? "Original" : "Variant"} Versions`)
+      console.log(`Showing ${+variant ? "Variant" : "Original"} Versions`)
     } else {
       console.log(`Could not get variant`)
     }

@@ -6,9 +6,10 @@ import useOptimizeAB from "../helper/ab"// ... then in _app.js you can use the v
 
 export default function Home() {
 
+  const variant = useOptimizeAB("your_experiment_id");
+
   useEffect(() => {
     window.dataLayer.push({ event: "optimize.activate" });
-    const variant = useOptimizeAB("your_experiment_id");
     console.log(variant);
   });
   return (

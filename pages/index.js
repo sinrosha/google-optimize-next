@@ -10,6 +10,13 @@ export default function Home() {
   // console.log(variant);
   useEffect(() => {
     window.dataLayer.push({ event: "optimize.activate" });
+    const variant = window.google_optimize.get("7Mytyh5iRJSBBaJS_m1mQQ");
+    if(variant) {
+      console.log(`Showing ${+variant ? "Original" : "Variant"} Versions`)
+    } else {
+      console.log(`Could not get variant`)
+    }
+    
   },[]);
   return (
     <div className={styles.container}>
